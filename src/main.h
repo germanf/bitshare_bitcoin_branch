@@ -388,7 +388,8 @@ public:
 class CTxOut
 {
 public:
-    int64 nValue;
+    int64    nValue;
+    uint32_t nUnit;
     CScript scriptPubKey;
 
     CTxOut()
@@ -405,12 +406,14 @@ public:
     IMPLEMENT_SERIALIZE
     (
         READWRITE(nValue);
+        READWRITE(nUnit);
         READWRITE(scriptPubKey);
     )
 
     void SetNull()
     {
         nValue = -1;
+        nUnit  = 0;
         scriptPubKey.clear();
     }
 
@@ -427,6 +430,7 @@ public:
     friend bool operator==(const CTxOut& a, const CTxOut& b)
     {
         return (a.nValue       == b.nValue &&
+                a.nUnit        == b.nUnit &&
                 a.scriptPubKey == b.scriptPubKey);
     }
 
@@ -441,7 +445,7 @@ public:
     {
         if (scriptPubKey.size() < 6)
             return "CTxOut(error)";
-        return strprintf("CTxOut(nValue=%"PRI64d".%08"PRI64d", scriptPubKey=%s)", nValue / COIN, nValue % COIN, scriptPubKey.ToString().substr(0,30).c_str());
+        return strprintf("CTxOut(nValue=%"PRI64d".%08"PRI64d", unit: %d scriptPubKey=%s)", nValue / COIN, nValue % COIN, nUnit, scriptPubKey.ToString().substr(0,30).c_str());
     }
 
     void print() const

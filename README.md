@@ -98,7 +98,23 @@ Some short sellers may not be able to redeem their positions.  In which case the
 #### How will the block-chain algorithm determine what exchange rates to use when issuing Crypto-USD?
 
 
-The blockchain will not have to decide, market participants will estimate the risks of going short to acquire crypto-USD.  Therefore the price will be decided by the user in an intentional act to issue Crypto-USD.    Likewise, these same participants will decide at what price it makes sense to cover their position.
+The blockchain will not have to decide, market participants will estimate the risks of going short to acquire crypto-USD.  Therefore the price will be decided by the user in an intentional act to issue crypto-USD.    Likewise, these same participants will decide at what price it makes sense to cover their position.
+
+To issue a short possition a user must do so in response to a bid placed on the network.  For example, a user places a bid saying they would like to buy 1 crypto-USD for 10 bitshares.  If no one holding bitshares accepts this bid, it means that 1 crypto-USD is worth more than 10 bitshares.  In response to this bid
+someone who owns bitshares may choose to issue new bitshares.  They would be issuing the new shares at an exchange rate higher than what the market is willing to pay and therefore their collatoral and the interest it pays currently worth more than the crypto-USD they would be creating.  The effect is to boost the
+value of crypto-USD and lower the value of BitShares. Because taking a short position is a bet that BitShares will go up, they are immediately 'in-the-red' and would take a loss if they instantly tried to cover their short.  After all, there were no bids at cover price.   
+
+Therefore all market participants would have to make an honest assesment of the value of crypto-USD vs BitShares and no-one could manipulate the price profitably by 'over-issuing'
+
+### Couldn't somone manipulate the price by taking both sides of the exchange?  
+
+Suppose someone wanted to manipulate the price by issuing a lot of crypto-USD to themself.  They would own all of the issued crypto-USD and thus could redeem it.  What prevents this?  The answer is quite simple, before you can issue new crypto-currency you must place a bid on the network.  All offers to accept that bid
+using existing crypto-USD would take priority over offers to issue new crypto-USD.  Thus anyone attempting to manipulate the price by over issuing would have to place a bid above market rates.  Holders of existing crypto-USD would see the above market rate and sell before new crypto-currency could be issued.  The net effect
+is that someone attempting to manipulate the market in this manner would end up redeeming their existing shorts at a loss instead of getting to issue new shorts.
+
+### Why must the bid be above market rates? 
+
+Because the highest bid known to the network must always be accepted first. Therefore to accept your own bid it would have to be the highest bid.
 
 
 #### How do you prevent abusing short positions to manipulate the market?
