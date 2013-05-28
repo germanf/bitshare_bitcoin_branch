@@ -1,9 +1,9 @@
 -----------------------------------------------------------------------------------------
 BitShares are a new crypto-currency that will enable a distributed peer-to-peer
 bank and exchange without counter-party-risk.  This bank will allow individuals
-to make interest-bearing deposits in anonymous accounts and transfer those balances
-to anyone in the world anonymously and securely.  If this system works as I belive
-it will, then it would completely replace Bitcoin, Ripple, and Mt.Gox, and all 
+to make interest-bearing deposits in anonymous accounts denominated in any currency 
+and transfer those balances to anyone in the world anonymously and securely.  If this 
+system works as I belive it will, then it would completely replace Bitcoin, Ripple, and Mt.Gox, and all 
 comodities exchanges.  It would enable interest-bearing gold and silver accounts
 without counterparty risk.  In effect, this system could be more valuable than
 Bitcoin, Mt.Gox, and Ripple combined.
@@ -31,12 +31,15 @@ I will release a BitShares client derived from Bitcoin with the following change
 
 1) Half of all mining / transaction fees will be paid to those who hold BitShares
 2) BitShares may be 'mortgaged' to back the creation of any number of sub-currencies at the highest bid output included in a block.
-3) 'Mortgaged' BitShares will pay their dividends to owners of the sub-currencies.
+3) 'Mortgaged' BitShares will pay their dividends to owners of the sub-currency they were mortgaged to create.
 4) 'Mortgaged' BitShares may only be redeemed by their creator at the original exchange rate.
 5) The hashing algorithm will require 128 MB of Ram, accessed in psuedo-random order, and ultimately conclude with a double SHA256()
 6) Every transaction output will be annotated with a sub-currency unit.
 7) A new output Script command will be created that allows an output to be redeemed if it is part of a transaction that
-   performs an exchange at a defined rate.
+   performs an exchange at a defined rate to an output redeemable by a specified address.
+
+Variations on these changes may be made at my discretion for the purpose of ensuring the
+economic model will work as desired or for a functionally equavlent alternative design.
 
 Timeline
 --------------------
@@ -44,5 +47,10 @@ The timeline depends upon the total invested.  If the total investment can reach
 then I will quit my day job and work on this full time.  Estimating development times is a very
 difficult task, but I believe these changes will require about 1 or 2 months to develop and 
 deploy to a test network and another 1 to 2 months of testing prior to releasing Version 1.0.
+
+Invest at your Own Risk
+-------------------
+I make no guarantees that these changes will result in the economic behavior that I predict. I cannot
+promise that BitShares will be widely adopted or that they will have any future value what-so-ever. 
 -----------------------------------------------------------------------------------------
-Signed by 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU:  HN2zhQGUt+4fXWwVGr89QwvHepfBPtphf/x90wvDdV/+NSYabiuEDn+gW8SGuvXrnHXptxz1hmC1mMDsJgW8n4U=
+Signed by 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU:  HIfhugULFxEyragC87m8UbBzWX3L7g/hTXWjjK4V0j8jQxDdVwgskrQNOfyMC232myIFGbZUqE3fCxyMU235ChE=
