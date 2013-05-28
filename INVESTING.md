@@ -20,6 +20,20 @@ BitShares per BitCoin in the gensis block of the new BitShare blockchain.  The g
 use the same private keys from your bitcoin wallet used to send your investment to allow you 
 to redeem your BitShares (simply import your bitcoin wallet).
 
+Pre-mining investment under these terms will be limited to 1 million total BitShares, first-come, first-serve.
+
+Pre-mined BitShares will be in addition to the 21,000,000 mined BitShares.
+
+Opportunity to invest expires once gensis chain has been launched.
+
+Investment Terms Modification 
+-----------------
+This contract may be revised/updated by updating https://github.com/bytemaster/bitshare/INVESTING.md 
+
+Any investments made after an update is pushed to Github shall fall under the new terms. Investments
+made prior to the Github update will honored under the existing terms.
+
+
 Use of Funds
 -----------------
 All bitcoins sent to 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU may be used at my sole discretion to
@@ -53,5 +67,13 @@ Invest at your Own Risk
 I make no guarantees that these changes will result in the economic behavior that I predict. I cannot
 promise that BitShares will be widely adopted or that they will have any future value what-so-ever. 
 
+
+Disputes
+-------------------
+Any controversy or claim arising out of or relating to this contract, or the breach of this contract, shall be settled by binding internet arbitration at judge.me in accordance with the judge.me arbitration agreement. The arbitrator's decision shall be final and legally binding and judgment may be entered thereon.
+
+If you would like the right to dispute this contract, you must email dlarimer@gmail.com a signed (with your bitcoin address) copy of this
+contract prior-to sending investment funds to 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU. 
+
 -----------------------------------------------------------------------------------------
-Signed by 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU:  HPwNc+37rKPWAmIvcEzdN7IZcpEGhoVhlzNkhsJnCUmuCb8V6PQ9bKBaj9/ofD2pltsK+hFpuKY/jeO06ur9gFc=
+Signed by 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU:  G6OYXtKaCH4YBMkWdHJTojeCKQVjkwi9IMEJrWzU8n7gnh5WGts9/AAB6e8TSKwzL0X9kF3wbNivvcleaiOm/eM=
