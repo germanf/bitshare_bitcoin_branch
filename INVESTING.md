@@ -1,4 +1,4 @@
------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 BitShares are a new crypto-currency that will enable a distributed peer-to-peer
 bank and exchange without counter-party-risk.  This bank will allow individuals
 to make interest-bearing deposits in anonymous accounts denominated in any currency 
@@ -52,5 +52,6 @@ Invest at your Own Risk
 -------------------
 I make no guarantees that these changes will result in the economic behavior that I predict. I cannot
 promise that BitShares will be widely adopted or that they will have any future value what-so-ever. 
+
 -----------------------------------------------------------------------------------------
-Signed by 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU:  HIfhugULFxEyragC87m8UbBzWX3L7g/hTXWjjK4V0j8jQxDdVwgskrQNOfyMC232myIFGbZUqE3fCxyMU235ChE=
+Signed by 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU:  HPwNc+37rKPWAmIvcEzdN7IZcpEGhoVhlzNkhsJnCUmuCb8V6PQ9bKBaj9/ofD2pltsK+hFpuKY/jeO06ur9gFc=
