@@ -15,7 +15,7 @@ way I can conceive.
 
 Investment Address
 ------------------
-Anyone who sends Bitcoins to 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU will receive 10,000
+Anyone who sends Bitcoins to 18dzTA5JDLrP5bu6spDSqK9wGDLS4sM5bU will receive 1,000
 BitShares per BitCoin in the gensis block of the new BitShare blockchain.  The gensis block will
 use the same private keys from your bitcoin wallet used to send your investment to allow you 
 to redeem your BitShares (simply import your bitcoin wallet).
