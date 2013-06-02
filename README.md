@@ -1,143 +1,94 @@
-BitShare - A Distributed Peer-to-Peer bank and exchange.
+BitShares - A dividend paying crypto-currency
 ================================
 
+BitShares is an new crypto-currency that improves upon BitCoin by offering
+the olders of BitShares dividends while providing a new hashing algorithm
+that will keep the blockchain decentralized and help prevent 51% attacks.
+
+BitShares is committed to decentralization of the money system and therefore
+aims to take every measure possible to defend against the forces that are
+already starting to centralize the Bitcoin / Litecoin economies. 
+
+Dividends
+------------
+The defining feature of BitShares is that it pays you dividends from half the
+mining reward and transaction fees.  These dividends make it equally as profitable
+to mine as to 'own' BitShares as in the long-run the profit from mining will
+approach the profit from owning. 
+
+
+Proof of Work
+-------------
+Both BitCoin and LiteCoin use a proof of work system that is easily accelerated
+by specialized ASIC or even GPUs.   If LiteCoin ever becomes as popular as Bitcoin
+then it will be no more secure against ASIC centralization than Bitcoin.
+
+To be truly secure against specialized hardware, the hash function must require
+the use of many transistors in a configuration that is already as optimized as 
+possible and widely distributed across all computers in the industry.  Transistors
+are the building blocks of all ASICs and specialized ASICS gain their performance
+advantage by optimizing the use of transistors.  
+
+  - RAM (or Cache) is already the single largest consumer of transistors in modern CPUs.  
+  - RAM is already as optimized as possible, specialized ASIC will not be able to improve upon it.
+  - RAM access is already the bottleneck on modern GPUs and CPUs.  
+  - RAM is everywhere and widely distributed.
+  - RAM is 'power-hungry' and thus ASICs would not gain much power savings.
+  
+As a result BitShares will use a new hash algorithm that uses psuedo-random access to 128 MB
+of RAM per hash.  It would require 1 GB of RAM to do 8 hashes in parallel and therefore GPUs
+would have no advantage over CPUs with 8 cores. GPUs gain most of their performance using
+multi-layer caching and if your dataset does not fit in one of the local memory areas then
+there is a significant performance hit.
+
+Another way to prevent specialized ASICS from optimizing the hash is to require a lot of
+branching (mis-predictions) and to design the algorithm such that each step depends upon
+the result of a prior step.  The more potential branches and variations on 'instructions'
+used the less well suited the hash function will be to GPU use and ultimately a 'specialized'
+ASIC would have to be as complex as a CPU.   
+
+All of that said, it is always possible to build specialized hardware to optimize some
+opperations.  The goal is to make such 'optimization' only apply to parts that do not
+represent the bottleneck and therefore even a 10x increase in the performance of those
+operations would result in only marginal over-all gains. 
+
+
+Limited Bandwidth / Storage Requirements
+----------------------------------------
+
+If there are no defined limits on block-size then eventually the network will be
+concentrated in the hands of high-end servers.  These servers will ultimately have 
+complete control over what transactions can get into blocks. This combined with 
+colored-coins and following of transactions through history would give Governments
+even more power than they have today.
+
+As a result, BitShares will place a limit on BlockSize growth and bandwidth usage to
+be 1 MB per block sustainable today over common DSL connections and in years ahead should become a
+trivial amount of bandwidth that every cellphone could handle.
+
+The side effect of this that space in the blocks becomes a scarce resource which will
+bid up transaction fees.  Unlike other block chains, high transaction fees are not 
+much of a problem so long as you leave your money parked long enough to earn some
+dividends.  The higher the transaction fees become, the more valuable it will be 
+to buy and hold BitShares because half of all transaction fees are paid out as
+dividends.
+
+High Transaction fees will also push people to use off-chain services like 
+OpenTransactions which can handle high-speed anonymous transactions without any
+transaction history.  Generally speaking it is far better to conduct banking on
+an OpenTransactions server than through the block-chain.   OpenTransactions 
+destroys the transaction history which will provide much better security.
+
+BitShares should be used for savings while OpenTransaction's is used for checking.
+
+
+Blockchain Compression
+----------------------
+Bitshares will free clients from having to store the complete transaction history.  Each
+block a hash of all unspent outputs is included in the merkel root and therefore allows
+a client to use this much smaller database as equally authoratative as the complete
+transaction history.   Each client could decide for itself how much history it needs 
+to protect against double spends.
 
-In this paper I present a new crypto-currency with aim of supporting the creation of many sub-currencies that closely track the value of any other item in the market without the need to any issuers.  An analogy can be made to a distributed peer-to-peer bank that accepts and pays interest on deposits in any currency.  This bank operates without counterparty-risk or IOUs. 
 
 
-#### This currency will have the following Properties:
-
-
-1. The native currency will be called a share and is mined into existence on the same schedule as Bitcoin.
-2. Shares will pay dividends from half of the mining fees and rewards 
-3. Users may issue new sub-currencies by ‘shorting the sub currency’ and backing the short position with dividend payments from a defined number of their Shares.
-4. Owners of sub-currencies will receive the dividends from the all Shares used to create them proportional to their balances. 
-5. Short positions can only be redeemed by the issuer.
-6. Users will be able to trade among all shares and currencies and via a built-in exchange.
-7. All shares and sub-currencies will have the same transaction properties as bitcoins.  
-
-
-#### Economic Effects of this new Currency:
-       1.  Shares derive their value from the same sources as Bitcoins.
-       2.  Because shares pay dividends the shorts effectively pay interest to the longs.  This interest payment is what regulates the supply and demand for deposits and withdraws and ultimately maintains price parity.   
-       3.  Sub-currencies can be thought of as a share-bond with a variable interest rate.  Their value is not derived from a promise to pay, but instead from the net-present-value of an interest-bearing bond.  The interest rate paid by a sub-currency share-bond is established as the average exchange rate at which all outstanding shares of a particular sub-currency were issued. Therefore, a crypto-gold sub-currency could be thought of as a share-bond at interest rate X, while a crypto-silver sub-currency would have an interest rate of Y.    People will only deposit or withdraw gold in exchange for a crypto-gold share-bond that has a net-present-value equal to gold and where there is a shared understanding by all issuers about what asset a particular sub-currency is being traded for.
-
-
-#### How does crypto-USD get created?
-Someone must go short crypto-USD and back their short position with interest bearing BitShares.
-
-
-#### Does it cost them anything to maintain a short position?
-Yes, the act of going short causes the interest rate of crypto-USD to go up relative to the interest rate of  Bitshares  AND the individual who is short crypto-USD forgoes interest payments on their Bitshares.  
-
-
-#### Why does the interest rate of crypto-USD go up relative to the interest rate of Bitshares when someone shorts?
-
-
-Because the individual short-selling crypto-USD is taking an exchange rate risk, he is unlikely to do so at the current market price.   After all, he will have to buy back crypto-USD in order to recover his bitshares (which he expects to go up in value).   So, he only goes short at a strike-price below the current exchange rate with enough margin to cover his risks.   If USD goes up then it will be more costly to cover his short position and he will lose money.  The risk of USD going up is equal to the risk of BitShares going down.
-
-Because the exchange occurred at below market rates, the dividend payments which are in Bitshares are necessarily valued at ‘above market rates’.  In other words, the percent gain in interest rates is proportional to the margin built into the short position.
-
-
-#### What impact does the change in relative interest rates have on the market?
-
-
-Higher interest rates always attract more depositors which will drive up the price of crypto-USD.  This works against the short-seller who needs the price of crypto-USD to go down relative to Bitshares or else he will make a loss.  This is part of the reason the individual short crypto-USD must maintain margin.
-
-
-Higher interest rates also trigger other Bitshare holders to consider selling their Bitshares for crypto-USD.  By swapping their savings they may yield a higher return.  This also serves to drive up the price of crypto-USD (and discourage the short-seller and necessitates caution when issuing new crypto-USD).
-
-
-#### If the change in interest rates brings in more depositors AND causes existing bitshare holders to switch to crypto-USD for savings, what market forces bring the price of crypto-USD back down?
-
-
-Holders of crypto-USD may see the potential for equity gains in bitshares outweigh the difference in interest rate.   In this case they would take the same position as the short-seller in believing bitshares will appreciate.
-
-
-Holders of crypto-USD may wish to withdraw their money into paper-USD.  
-
-
-
-
-#### What happens if there is a run on the bank and everyone wants to redeem their crypto-USD?
-
-
-If Bitshares lose all value, then crypto-USD no longer pays interest of any value whatsoever and the short-seller has nothing to gain.  Everyone involved would lose everything they deposited with the bank.  This scenario is unlikely so long as bitshares continue to provide a valuable service as a medium of exchange and the underlying cryptography, internet, and power systems remain available *somewhere* in the world.  Thus any depositor who puts money into crypto-USD is implicitly trusting that the underlying Backing of crypto-USD (bitshare dividends) will not go to 0.  
-
-
-Assuming bitshare do to not go to 0, then crypto-USD will have value to all short-sellers.     crypto-USD will also have value to anyone who expects the bank-run to pass and for depositors to return at some point in the future.   In this case, speculators will start buying up crypto-USD at below face value prices and short-sellers will start covering their positions taking crypto-USD out of circulation.  These factor will conspire to provide support to the crypto-USD price.
-
-
-In a panic the rush to withdraw will push the paper-USD to crypto-USD price down which is economically identical to increasing the interest rate paid to new depositors in crypto-USD.  The increased interest rate will cause cash to flood into the system to meet the demand for withdrawals.  
-
-
-The depressed paper-USD to crypto-USD price will also discourage many people from trying to withdraw during the run.  They decided to ride out the storm rather than take a loss in a panic.
-
-
-So the question becomes what would trigger a run on the bank?  Because there are no IOUs involved and all crypto-USD are backed by real value that does not have counterparty-risk (bitshares) then it is unclear what could cause such a rush short of something threatening the very infrastructure (internet/power) that the system is built on.   
-
-
-#### What happens if someone dies before they close out a short position?
-
-
-Then there will be a permanent bias in interest rate in favor of owning crypto-USD over bitshares.
-
-
-#### What happens if Bitshares fall in value by 99%?
-
-
-Assuming the 99% fall in value is not part of a complete crash to 0 which I have already covered, then I will assume that the Bitshares found support at 1% of their high.
-
-
-Then the value of interest payments paid to holders of crypto-USD will fall by 99% while the interest rate paid to holders of Bitshares will remain at 10%.   As a result those who are seeking a 10% return will sell their crypto-USD and buy bitshares.  This will depress the price of crypto-USD and help support the price of Bitshares.   Short-sellers (crypto-USD issuers) would be taking it in the shorts so they would be actively redeeming as much crypto-USD as possible as soon as possible to cut their losses.  
-
-
-Some short sellers may not be able to redeem their positions.  In which case the effect would be the same as if the short seller had died and there would be a permanent interest rate bias in favor of owning crypto-USD vs owning bitshares.   Once Bitshares reach a new equilibrium after the market adjustment, then this interest-rate bias will encourage others to redeem the crypto-USD for paper-USD.
-
-
-#### How will the block-chain algorithm determine what exchange rates to use when issuing Crypto-USD?
-
-
-The blockchain will not have to decide, market participants will estimate the risks of going short to acquire crypto-USD.  Therefore the price will be decided by the user in an intentional act to issue crypto-USD.    Likewise, these same participants will decide at what price it makes sense to cover their position.
-
-To issue a short possition a user must do so in response to a bid placed on the network.  For example, a user places a bid saying they would like to buy 1 crypto-USD for 10 bitshares.  If no one holding bitshares accepts this bid, it means that 1 crypto-USD is worth more than 10 bitshares.  In response to this bid
-someone who owns bitshares may choose to issue new bitshares.  They would be issuing the new shares at an exchange rate higher than what the market is willing to pay and therefore their collatoral and the interest it pays currently worth more than the crypto-USD they would be creating.  The effect is to boost the
-value of crypto-USD and lower the value of BitShares. Because taking a short position is a bet that BitShares will go up, they are immediately 'in-the-red' and would take a loss if they instantly tried to cover their short.  After all, there were no bids at cover price.   
-
-Therefore all market participants would have to make an honest assesment of the value of crypto-USD vs BitShares and no-one could manipulate the price profitably by 'over-issuing'
-
-### Couldn't somone manipulate the price by taking both sides of the exchange?  
-
-Suppose someone wanted to manipulate the price by issuing a lot of crypto-USD to themself.  They would own all of the issued crypto-USD and thus could redeem it.  What prevents this?  The answer is quite simple, before you can issue new crypto-currency you must place a bid on the network.  All offers to accept that bid
-using existing crypto-USD would take priority over offers to issue new crypto-USD.  Thus anyone attempting to manipulate the price by over issuing would have to place a bid above market rates.  Holders of existing crypto-USD would see the above market rate and sell before new crypto-currency could be issued.  The net effect
-is that someone attempting to manipulate the market in this manner would end up redeeming their existing shorts at a loss instead of getting to issue new shorts.
-
-### Why must the bid be above market rates? 
-
-Because the highest bid known to the network must always be accepted first. Therefore to accept your own bid it would have to be the highest bid.
-
-
-#### How do you prevent abusing short positions to manipulate the market?
-
-
-Taking out a short position requires capital of equal value and incurs opportunity cost in foregone interest payments.  These forgone interest payments are what back the value of the short position.  Therefore there are no naked shorts and the shorts have no more power in the market than the longs.  
-
-
-Before a new short position may be opened someone must place an order to sell
-
-
-#### What prevents people from creating a million different currency types?
-
-
-First of all, creating a currency type means taking out a short position in that currency which means it incurs a transaction cost.  Second, others must understand and have consensus about the meaning / relationship of that currency type to Bitshares for it to have any value.   Third, the short position must accurately reflect market prices or the issuer will take losses.  If the price too low, the the market will push the price up causing them to lose money on the short position.  If they price it too high, then they will only ever be able to redeem it with themselves and thus would incur 2 transaction fees for wasting everyone’s time.
-
-
-
-
-#### How does everyone come to an agreement about what a particular sub-currency is supposed to track?
-
-
-How did language develop?  Who decided what words would track what ideas?  The answer is that anyone who doesn’t learn and adapt to the consensus would be unable to communicate.  This is a very natural process and does not require any central authority or formal ‘contracts’ between people to define the meaning of words.  
-
-
-Likewise, people will naturally come to a consensus about what currencies track what ideas and there would be ample market pressure for all participants to find a way to reach consensus.  Any individual who is wrong about the consensus opinion would end up mispricing assets.
