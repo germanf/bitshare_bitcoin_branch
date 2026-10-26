@@ -2,9 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
-#include <string.h>
-#include "util/coding.h"
 #include "util/hash.h"
+
+#include <string.h>
+
+#include "util/coding.h"
 
 namespace leveldb {
 
@@ -16,7 +18,7 @@ uint32_t Hash(const char* data, size_t n, uint32_t seed) {
   uint32_t h = seed ^ (n * m);
 
   // Pick up four bytes at a time
-  while (data + 4 <= limit) {
+  while (limit - data >= 4) {
     uint32_t w = DecodeFixed32(data);
     data += 4;
     h += w;
@@ -27,19 +29,18 @@ uint32_t Hash(const char* data, size_t n, uint32_t seed) {
   // Pick up remaining bytes
   switch (limit - data) {
     case 3:
-      h += data[2] << 16;
-      // fall through
+      h += static_cast<uint8_t>(data[2]) << 16;
+      [[fallthrough]];
     case 2:
-      h += data[1] << 8;
-      // fall through
+      h += static_cast<uint8_t>(data[1]) << 8;
+      [[fallthrough]];
     case 1:
-      h += data[0];
+      h += static_cast<uint8_t>(data[0]);
       h *= m;
       h ^= (h >> r);
       break;
   }
   return h;
 }
-
 
 }  // namespace leveldb
